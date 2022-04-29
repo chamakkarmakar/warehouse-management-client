@@ -1,7 +1,6 @@
 import { MenuIcon, XIcon } from '@heroicons/react/solid';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css';
 
 const Header = () => {
     const [open,setOpen]=useState(false);
@@ -13,7 +12,7 @@ const Header = () => {
      {item:'LOGIN', link:'/'}
  ]
     return (
-       <div className='shadow-lg w-full fixed top-0 left-0'>
+       <div className='shadow-lg w-full sticky top-0 left-0 '>
            <div className='md:flex items-center justify-between bg-white py-4 md:px-10 px-7'>
 
                <div className='font-fold text-2xl cursor-pointer text-grey-500'>
@@ -24,7 +23,7 @@ const Header = () => {
                    
                </div>
 
-                    <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${ open ? 'top-20 opacity-100' : 'top-[-200px]' } opacity-100 `}>
+                    <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${ open ? 'top-6 opacity-100' : 'top-[-200px]' } opacity-100 `}>
 
                         {
                             navItems.map(item=>
