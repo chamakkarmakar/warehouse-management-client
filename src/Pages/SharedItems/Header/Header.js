@@ -9,7 +9,7 @@ const Header = () => {
      {item:'PRODUCTS', link:'/'},
      {item:'SERVICES', link:'/'},
      {item:'CONTACT', link:'/'},
-     {item:'LOGIN', link:'/'}
+     {item:'LOGIN', link:'/login'}
  ]
     return (
        <div className='shadow-lg w-full sticky top-0 left-0 '>
