@@ -1,9 +1,10 @@
 import './App.css';
+import Header from './Pages/SharedItems/Header/Header';
 
 function App() {
   return (
     <div className="App">
-      <h1 className='text-3xl'>Client Side</h1>
+      <Header></Header>
     </div>
   );
 }
