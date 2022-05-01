@@ -14,7 +14,7 @@ const Products = () => {
     return (
         <div>
             <h1 className='text-2xl font-semibold'>Products:</h1>
-            <div className='grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-6'>
+            <div className='container grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-6 mx-auto'>
             {
                 
                 sixProduct.map(product => <Product 
