@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../SharedItems/Loading/Loading';
@@ -10,16 +10,18 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
-    const location = useLocation(); 
+    const location = useLocation();
 
     let from = location.state?.from?.pathname || "/";
-    let errorElement; 
+    let errorElement;
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const navigateRegister = () => {
         navigate('/register');
@@ -28,7 +30,7 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-    if (loading) {
+    if (loading || sending) {
         return <Loading></Loading>
     }
     if (error) {
@@ -40,9 +42,21 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        
         signInWithEmailAndPassword(email, password);
     }
+
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+           alert('sent message in your email');
+        }
+        else {
+           alert('enter your email address');
+            
+        }
+    }
+
     return (
         <div className="container mx-auto mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-xl shadow-2xl">
             <h1 className='text-2xl font-bold pt-7'>SIGN IN</h1>
@@ -53,7 +67,12 @@ const Login = () => {
                 <div className="mt-8">
                     <input className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" ref={passwordRef} type="password" placeholder="Enter your password" required />
                 </div>
-                <div className="mt-10">
+                <div class="flex items-center mb-6 mt-1">
+                    <div class="flex ml-auto">
+                        <button onClick={resetPassword} className="no-underline inline-flex text-sm font-semibold sm:text-sm cursor-pointer text-indigo-600 hover:text-indigo-800">Forgot Password?</button>
+                    </div>
+                </div>
+                <div className="mt-8">
                     <button className="bg-indigo-500 text-gray-100 p-4 w-full rounded-full tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
                                 shadow-lg">

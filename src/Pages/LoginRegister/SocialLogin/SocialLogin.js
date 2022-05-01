@@ -28,14 +28,16 @@ const SocialLogin = () => {
         <div>
             <div className="relative h-px bg-gray-300">
                 <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
-                    <span className="bg-white px-4 text-xs text-gray-500 uppercase">Or</span>
+                    <span className="bg-white px-4 text-xs text-gray-500">OR</span>
                 </div>
             </div>
 
-            <div className='pb-7'>
-                <button onClick={() => signInWithGoogle()} className="relative mt-6 border rounded-md py-2 text-sm text-gray-800 bg-gray-100 hover:bg-gray-200">
-                    <span className='text-lg bg-blue-600 p-3 text-white'>Login with Google+</span>
-                </button>
+            <div className='pb-7 mt-5'>
+            <button onClick={()=>signInWithGoogle()}className="bg-sky-400 text-gray-100 p-4 w-full rounded-full tracking-wide
+                                font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-sky-500
+                                shadow-lg">
+                        Sign In With Google
+                    </button>
             </div>
         </div>
     );
