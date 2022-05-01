@@ -6,7 +6,7 @@ const Header = () => {
     const [open,setOpen]=useState(false);
  const navItems=[
      {item:'HOME', link:'/'},
-     {item:'PRODUCTS', link:'/'},
+     {item:'PRODUCTS', link:'/products'},
      {item:'SERVICES', link:'/'},
      {item:'CONTACT', link:'/'},
      {item:'LOGIN', link:'/login'}
@@ -27,7 +27,7 @@ const Header = () => {
 
                         {
                             navItems.map(item=>
-                                <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
+                                <li key={item.item} className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
                                     <Link to={item.link} className='text-gray-500 font-semibold hover:pb-5  hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>{item.item}</Link>
                                 </li>
                             )
