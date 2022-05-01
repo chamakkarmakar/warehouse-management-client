@@ -6,7 +6,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+        fetch('fakedb.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -21,7 +21,6 @@ const Products = () => {
                     key={product.id}
                     product={product}></Product>)
             }
-                {/* {products.slice(0,6)} */}
             </div>
         </div>
     );

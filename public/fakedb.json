@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Cooking oil",
+        "img": "https://cdnprod.mafretailproxy.com/sys-master-root/h7e/h91/14159216279582/36089_main.jpg_480Wx480H",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 2,
+        "name": "Rice",
+        "img": "https://4.imimg.com/data4/UI/NB/MY-2459695/untitled-2-500x500.jpg",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 3,
+        "name": "Aata",
+        "img": "https://dunia1.com/uploads/products/3c096aa20e5a0db6a864c2efbd95ed02.jpg",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 4,
+        "name": "Cooking oil",
+        "img": "https://cdnprod.mafretailproxy.com/sys-master-root/h7e/h91/14159216279582/36089_main.jpg_480Wx480H",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 5,
+        "name": "Rice",
+        "img": "https://4.imimg.com/data4/UI/NB/MY-2459695/untitled-2-500x500.jpg",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 6,
+        "name": "Aata",
+        "img": "https://dunia1.com/uploads/products/3c096aa20e5a0db6a864c2efbd95ed02.jpg",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id":7,
+        "name": "Rice",
+        "img": "https://4.imimg.com/data4/UI/NB/MY-2459695/untitled-2-500x500.jpg",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 8,
+        "name": "Aata",
+        "img": "https://dunia1.com/uploads/products/3c096aa20e5a0db6a864c2efbd95ed02.jpg",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 9,
+        "name": "Cooking oil",
+        "img": "https://cdnprod.mafretailproxy.com/sys-master-root/h7e/h91/14159216279582/36089_main.jpg_480Wx480H",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    },
+    {
+        "id": 10,
+        "name": "Cooking oil",
+        "img": "https://cdnprod.mafretailproxy.com/sys-master-root/h7e/h91/14159216279582/36089_main.jpg_480Wx480H",
+        "description":"Sufi sunflower cooking oil has a very high smoke point, and helps food stay fresher and healthier for longer periods of time.",
+        "supplier":"SUFI",
+        "quantity":10,
+        "price":1529
+    }
+]
