@@ -46,7 +46,7 @@ const Header = () => {
                     <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
                         {
                             user ?
-                                <p className='text-gray-500 font-semibold hover:pb-5  hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out' onClick={handleSignOut}>SIGN OUT</p>
+                                <p className='text-gray-500 font-semibold hover:pb-5 cursor-pointer  hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out' onClick={handleSignOut}>SIGN OUT</p>
                                 :
                                 <Link to='/login' className='text-gray-500 font-semibold hover:pb-5  hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>SIGN IN</Link>
                         }

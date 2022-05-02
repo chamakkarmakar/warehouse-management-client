@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import Loading from '../../SharedItems/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -49,11 +51,11 @@ const Login = () => {
         const email = emailRef.current.value;
         if (email) {
             await sendPasswordResetEmail(email);
-           alert('sent message in your email');
+            toast('sent message in your email');
         }
         else {
-           alert('enter your email address');
-            
+            toast('enter your email address');
+
         }
     }
 
@@ -87,6 +89,7 @@ const Login = () => {
                 Don't have an account ? <span onClick={navigateRegister} className="cursor-pointer text-indigo-600 hover:text-indigo-800">Sign up</span>
             </div>
             <SocialLogin></SocialLogin>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
