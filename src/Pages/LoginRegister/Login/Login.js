@@ -69,8 +69,8 @@ const Login = () => {
                 <div className="mt-8">
                     <input className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" ref={passwordRef} type="password" placeholder="Enter your password" required />
                 </div>
-                <div class="flex items-center mb-6 mt-1">
-                    <div class="flex ml-auto">
+                <div  className="flex items-center mb-6 mt-1">
+                    <div  className="flex ml-auto">
                         <button onClick={resetPassword} className="no-underline inline-flex text-sm font-semibold sm:text-sm cursor-pointer text-indigo-600 hover:text-indigo-800">Forgot Password?</button>
                     </div>
                 </div>
