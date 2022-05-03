@@ -1,4 +1,6 @@
+import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Product from '../Product/Product';
 
 const Products = () => {
@@ -23,6 +25,7 @@ const Products = () => {
                     product={product}></Product>)
             }
             </div>
+            <Link className='text-blue-500 float-right mr-16 text-2xl font-semibold' to='/allproducts' >Manage Inventories <ArrowNarrowRightIcon className='h-7 w-9 inline'></ArrowNarrowRightIcon> </Link>
         </div>
     );
 };
