@@ -15,21 +15,6 @@ const ProductUpdate = () => {
             .then(res => res.json())
             .then(data => setProduct(data));
     }, [])
-    // const handleDelivered = () => {
-    //     const url = `http://localhost:5000/product/${productId}`;
-    //     const newQty =parseInt (product.quantity)-1;
-    //     const quantity=newQty;
-    //     console.log(quantity);
-    //     fetch(url, {
-    //         method: 'PUT',
-    //         headers: {
-    //             "content-type": 'application/json',
-    //         },
-    //         body: JSON.stringify({quantity}),
-    //     })
-    //         .then(response => response.json())
-    //         .then(data => setProduct(data))
-    // }
 
     const handleDelivered = () => {
         const newQty = parseInt(product.quantity) - 1;

@@ -27,7 +27,7 @@ const Product = ({ product }) => {
                 <p>Available:  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{quantity}</span>
                 </p>
             </div>
-            <div className='pb-5'>
+            <div className='mb-0 pb-5'>
                 <button onClick={() => navigateToProductUpdate(_id)} className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full my-0 mx-28">
                     Manage Stock
                 </button>
