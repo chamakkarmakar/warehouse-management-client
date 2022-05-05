@@ -28,7 +28,7 @@ const Product = ({ product }) => {
                 </p>
             </div>
             <div className='pb-5'>
-                <button onClick={() => navigateToProductUpdate(_id)} className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full">
+                <button onClick={() => navigateToProductUpdate(_id)} className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full my-0 mx-28">
                     Manage Stock
                 </button>
             </div>
