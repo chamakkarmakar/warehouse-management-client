@@ -1,3 +1,4 @@
+import { TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../../hooks/useProducts';
@@ -43,7 +44,7 @@ const AllProducts = () => {
                         <p className='my-auto'>{product.supplier}</p>
                         <p className='my-auto'>{product.quantity}</p>
                         <p className='my-auto'>{product.price}</p>
-                        <button className='bg-orange-300 hover:bg-orange-400 rounded-lg my-6 mx-4' onClick={() => handleDelete(product._id)}>Delete</button>
+                        <button className='bg-orange-300 hover:bg-orange-400 rounded-lg my-6 mx-4' onClick={() => handleDelete(product._id)}> <TrashIcon className='w-8 h-8'></TrashIcon> </button>
                     </div>)
                 }
             </>

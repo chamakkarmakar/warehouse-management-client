@@ -1,67 +1,59 @@
+import { HeartIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const today = new Date();
+    const year = today.getFullYear();
     return (
-        <footer className="text-center lg:text-left bg-gray-100 text-gray-600 mt-9">
-            <div className="mx-6 py-10 text-center md:text-left">
-                <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <footer className=" bg-rose-50">
+            <div className="max-w-screen-xl px-4 py-10 mx-auto sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                     <div>
-                        <h6 className="uppercase font-semibold mb-4 flex items-center justify-center md:justify-start">
-                        About The Store
-                        </h6>
-                        <p>
-                        The Store at Shoponix is an original voice, and one of the leading shopping destinations in New York City, offering a curated selection of well-executed contemporary artist-made objects and jewelry.
-                        </p>
+                        <p className="mt-2 text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl">Surprise Dairy!</p>
+                        <p className="max-w-xs mt-4 text-sm text-gray-600"> world's top dairy product to think about your benefit.By offering cheap, nutrient-rich dairy items and contributing to good economic impact, we are cultivating healthy, thriving communities.</p>
+
                     </div>
-                    <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                        Quick Links
-                        </h6>
-                        <p className="mb-4">
-                            <span className="text-gray-600">About us</span>
-                        </p>
-                        <p className="mb-4">
-                            <span className="text-gray-600">Shop now</span>
-                        </p>
-                        <p className="mb-4">
-                            <span className="text-gray-600">Cart</span>
-                        </p>
-                    </div>
-                    <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                            Support links
-                        </h6>
-                        <p className="mb-4">
-                            <span className="text-gray-600">My Profile</span>
-                        </p>
-                        <p className="mb-4">
-                            <span className="text-gray-600">My Orders History</span>
-                        </p>
-                        <p className="mb-4">
-                            <span className="text-gray-600">Home</span>
-                        </p>
-                        <p>
-                            <span className="text-gray-600">Help</span>
-                        </p>
-                    </div>
-                    <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                            Contact
-                        </h6>
-                        <ul>
-                            <li className="flex items-center justify-center md:justify-start mb-4"> BANGLADESH</li>
-                            <li className="flex items-center justify-center md:justify-start mb-4"> info@example.com</li>
-                            <li className="flex items-center justify-center md:justify-start mb-4">+ 01 234 567 88 </li>
-                            <li className="flex items-center justify-center md:justify-start"> + 01 234 567 89</li>
-                        </ul>
+                    <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
+                        <div>
+                            <p className="font-medium">
+                                Quick Links
+                            </p>
+                            <nav className="flex flex-col mt-4 space-y-2 text-lg text-gray-500">
+                                <Link to='/about' className="hover:opacity-75"> About Us</Link>
+                                <Link to='/allproducts' className="hover:opacity-75"> All Products </Link>
+                                <Link to='/allproducts' className="hover:opacity-75"> Manage Inventories </Link>
+                            </nav>
+                        </div>
+                        <div>
+                            <p className="font-medium">
+                                Support Links
+                            </p>
+                            <nav className="flex flex-col mt-4 space-y-2 text-lg text-gray-500">
+                                <Link to='/blog' className="hover:opacity-75"> Blog </Link>
+                                <Link to='/addproduct' className="hover:opacity-75"> Add a Product </Link>
+                                <Link to='/allproducts' className="hover:opacity-75"> Edit a Product </Link>
+                            </nav>
+                        </div>
+                        <div>
+                            <p className="font-medium">
+                                Contact
+                            </p>
+                            <nav className="flex flex-col mt-4 space-y-2 text-lg text-gray-500">
+                                <li className="hover:opacity-75"  > 112/A Kotowali </li>
+                                <li className="hover:opacity-75"  > Chittagong </li>
+                                <li className="hover:opacity-75"  > Bangladesh </li>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="text-center p-6 bg-gray-200">
-                <span>Copyright © 2022 : </span>
-                <Link className="text-gray-600 font-semibold" to="https://tailwind-elements.com/">Grocery</Link> Designed By <span className='font-semibold '> Chamak</span>
+            <div className='text-center py-4 mt-6'>
+            <small className="text-gray-800 my-auto mx-auto">
+                © {year}. Made with By <HeartIcon className='inline w-5 h-5 text-red-700'></HeartIcon><span className="ml-1 text-rose-900">Chamak Karmakar </span>
+            </small>
             </div>
+
         </footer>
     );
 };
