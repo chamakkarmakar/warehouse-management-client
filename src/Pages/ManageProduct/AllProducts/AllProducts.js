@@ -1,4 +1,4 @@
-import { TrashIcon } from '@heroicons/react/solid';
+import { PencilIcon, TrashIcon } from '@heroicons/react/solid';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useProducts from '../../../hooks/useProducts';
@@ -24,9 +24,8 @@ const AllProducts = () => {
     return (
         <div className='container mx-auto'>
             <h1 className='text-red-700 text-3xl font-extrabold text-center my-3'>All Products</h1>
-            <div className='flex justify-between'>
-                <h2 className='text-2xl'>Product Details</h2>
-                <Link to='/addproduct' className='text-white font-bold p-3 bg-cyan-600 hover:bg-cyan-800  rounded-lg'>Add Product +</Link>
+            <div className='flex justify-end'>
+                <Link to='/addproduct' className='text-white font-bold py-3 px-6 bg-cyan-600 hover:bg-cyan-800  rounded-lg'>Add Product <PencilIcon className='inline w-5 h-5'></PencilIcon> </Link>
             </div>
             <div className="grid grid-cols-6 gap-x-4 gap-y-3 bg-orange-50 py-4 font-semibold text-xl mt-7">
                 <h2> </h2>
@@ -44,7 +43,7 @@ const AllProducts = () => {
                         <p className='my-auto'>{product.supplier}</p>
                         <p className='my-auto'>{product.quantity}</p>
                         <p className='my-auto'>{product.price}</p>
-                        <button className='bg-orange-300 hover:bg-orange-400 rounded-lg my-6 mx-4' onClick={() => handleDelete(product._id)}> <TrashIcon className='w-8 h-8'></TrashIcon> </button>
+                        <button className=' rounded-lg my-6 ml-8' onClick={() => handleDelete(product._id)}> <TrashIcon className='w-8 h-8 text-red-700 hover:text-red-800 text-center'></TrashIcon> </button>
                     </div>)
                 }
             </>

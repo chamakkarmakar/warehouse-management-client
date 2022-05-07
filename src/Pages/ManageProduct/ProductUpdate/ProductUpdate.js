@@ -1,6 +1,5 @@
-import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useProductDetails from '../../../hooks/useProductDetails';
 
 const ProductUpdate = () => {
@@ -25,7 +24,7 @@ const ProductUpdate = () => {
         fetch(url, {
             method: 'PUT',
             headers: {
-                'content-Type': 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(quantity)
         })
@@ -35,7 +34,6 @@ const ProductUpdate = () => {
                 setProduct(data)
             })
     }
-
     return (
         <div className='container mx-auto text-lg'>
             <h2 className='text-3xl text-center font-extrabold'>Product Details</h2>
@@ -63,7 +61,7 @@ const ProductUpdate = () => {
                     <input type="submit" value="Restock" className='bg-sky-500 rounded-xl py-2 px-14 font-semibold cursor-pointer hover:bg-sky-700 hover:text-white' />
                 </div>
             </form>
-            <Link className='text-blue-500 float-right mr-16 text-2xl font-semibold' to='/allproducts' >Manage Inventories <ArrowNarrowRightIcon className='h-7 w-9 inline'></ArrowNarrowRightIcon> </Link>
+            {/* <Link className='text-blue-500 float-right mr-16 text-2xl font-semibold' to='/allproducts' >Manage Inventories <ArrowNarrowRightIcon className='h-7 w-9 inline'></ArrowNarrowRightIcon> </Link> */}
         </div>
     );
 };

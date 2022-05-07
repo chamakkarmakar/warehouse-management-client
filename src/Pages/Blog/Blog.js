@@ -17,8 +17,7 @@ const Blog = () => {
         setSelected(i)
     }
     return (
-        <div className='container mx-auto w-full md:w-9/12'>
-            <h2 className="text-center text-2xl font-extrabold">FAQ</h2>
+        <div className='container mx-auto mt-7 w-full md:w-9/12'>
             {
                 faq.map((aq,i)=>
                 <div id="accordion-collapse" data-accordion="collapse" key={aq.no}>

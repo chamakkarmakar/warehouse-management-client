@@ -9,7 +9,7 @@ const Products = () => {
     
     const sixProduct=products.slice(0,6);
     return (
-        <div>
+        <div className='my-8'>
             <h1 className='text-3xl text-center font-extrabold my-7'>PRODUCTS</h1>
             <div className='container grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-6 mx-auto'>
                 
@@ -19,7 +19,7 @@ const Products = () => {
                     product={product}></Product>)
             }
             </div>
-            <Link className='text-blue-500 float-right mr-16 text-2xl font-semibold' to='/allproducts' >Manage Inventories <ArrowNarrowRightIcon className='h-7 w-9 inline'></ArrowNarrowRightIcon> </Link>
+            <Link className='text-blue-500 float-right mr-16 text-2xl font-semibold' to='/allproducts' >Manage Products <ArrowNarrowRightIcon className='h-7 w-9 inline'></ArrowNarrowRightIcon> </Link>
         </div>
     );
 };

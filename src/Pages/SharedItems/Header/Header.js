@@ -45,7 +45,7 @@ const Header = () => {
                             user && 
                             <>
                             
-                                <button onClick={()=>setSelected(selected)} id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">Dropdown <ChevronDownIcon className='w-6 h-6'></ChevronDownIcon>
+                                <button onClick={()=>setSelected(!selected)} id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">Dropdown <ChevronDownIcon className='w-6 h-6'></ChevronDownIcon>
                                 </button>
 
                                 <div id="dropdownNavbar" className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 ">
