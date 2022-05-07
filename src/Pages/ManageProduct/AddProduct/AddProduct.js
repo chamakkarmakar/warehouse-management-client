@@ -28,6 +28,7 @@ const AddProduct = () => {
         .then(data=>{
             console.log(data);
         })
+        event.target.reset();
     }
     
     return (

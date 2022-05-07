@@ -1,21 +1,22 @@
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-
+import useProductDetails from '../../../hooks/useProductDetails';
 
 const ProductUpdate = () => {
     const { productId } = useParams();
-
-    const [product, setProduct] = useState({});
+    const [product,setProduct]=useProductDetails(productId);
     const { img, name, description, quantity, supplier, price } = product;
 
-    useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`;
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setProduct(data));
-    }, [])
-
+    // const [reload,setReload]=useState(true);
+    // useEffect(()=>{
+    //     const url = `http://localhost:5000/product/${productId}`;
+    //     fetch(url)
+    //     .then(res=>res.json())
+    //     .then(data=>{
+    //         setReload(data)
+    //     })
+    // },[reload])
     const handleDelivered = () => {
         const newQty = parseInt(product.quantity) - 1;
         const quantity = newQty;
@@ -24,12 +25,15 @@ const ProductUpdate = () => {
         fetch(url, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'content-Type': 'application/json'
             },
-            body: JSON.stringify({ quantity })
+            body: JSON.stringify(quantity)
         })
             .then(response => response.json())
-            .then(data => setProduct(data))
+            .then(data => {
+                console.log(data);
+                setProduct(data)
+            })
     }
 
     return (
@@ -49,7 +53,7 @@ const ProductUpdate = () => {
                         {
                             quantity ? <p>Sold</p> : <p className='text-red-700'>Sold out</p>
                         }</div>
-                    <button onClick={() => handleDelivered()} className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full">Delivered</button>
+                    <button onClick={() => handleDelivered(quantity)} className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full">Delivered</button>
                 </div>
             </div>
             <form className=' mx-auto w-96 h-48 shadow-lg px-8 md:mx-96 mt-10'>

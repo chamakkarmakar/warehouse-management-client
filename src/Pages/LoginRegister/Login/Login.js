@@ -7,8 +7,8 @@ import auth from '../../../firebase.init';
 import Loading from '../../SharedItems/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
-
 const Login = () => {
+
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
@@ -36,7 +36,7 @@ const Login = () => {
         return <Loading></Loading>
     }
     if (error) {
-        errorElement = <p className='text-red-900 font-bold'>Error: {error?.message}</p>
+        errorElement = <p className='text-red-900 font-bold text-center'>invalid email/password</p>
     }
 
     const handleLogin = e => {

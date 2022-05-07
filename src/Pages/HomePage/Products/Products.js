@@ -1,18 +1,12 @@
 import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useProducts from '../../../hooks/useProducts';
 import Product from '../Product/Product';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/product')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setProducts(data)})
-    }, [])
+    const [products] = useProducts();
+    
     const sixProduct=products.slice(0,6);
     return (
         <div>

@@ -13,9 +13,10 @@ const Header = () => {
     const navItems = [
         { item: 'HOME', link: '/' },
         { item: 'PRODUCTS', link: '/products' },
-        { item: 'SERVICES', link: '/' },
-        { item: 'CONTACT', link: '/' },
-        { item: 'ABOUT', link: '/about' }
+        { item: 'Blog', link: '/blog' },
+        { item: 'ABOUT', link: '/about' },
+        { item: 'CONTACT', link: '/' }
+
     ]
 
     const handleSignOut = () => {
@@ -31,10 +32,9 @@ const Header = () => {
                 </div>
                 <div onClick={() => setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden' >
                     {open ? <XIcon className="h-7 w-7 text-blue-500"></XIcon> : <MenuIcon className="h-7 w-7 text-blue-500"></MenuIcon>}
-
                 </div>
 
-                <ul className={`md:flex md:items-center  md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-9 opacity-100' : 'top-[-250px]'} opacity-100 `}>
+                <ul className={`md:flex md:items-center  md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-9 opacity-100' : 'top-[-650px]'} opacity-100 `}>
 
                     {
                         navItems.map(item =>
@@ -45,10 +45,31 @@ const Header = () => {
                     }
                     <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
                         {
+                            user && <>
+                                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">Dropdown 
+
+                                </button>
+
+                                <div id="dropdownNavbar" className="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                    <ul className="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                                        <li>
+                                            <Link to='/allproducts' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>All Products</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/addproduct' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>Add Product</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/myproduct' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>My Product</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </>
+                        }
+                        {
                             user ?
-                                <p className='text-gray-500 font-semibold hover:pb-5 cursor-pointer  hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out' onClick={handleSignOut}>SIGN OUT</p>
+                                <p className='text-white font-semibold cursor-pointer rounded-lg bg-green-400 hover:bg-green-700 p-2 transition duration-300 w-auto ease-in-out' onClick={handleSignOut}>SIGN OUT</p>
                                 :
-                                <Link to='/login' className='text-gray-500 font-semibold hover:pb-5  hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>SIGN IN</Link>
+                                <Link to='/login' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>SIGN IN</Link>
                         }
                     </li>
                 </ul>
