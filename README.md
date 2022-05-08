@@ -1,8 +1,48 @@
-# Getting Started with Create React App
+# Website Name : Surprise Dairy!
+
+## Description
+
+An Inventory Management system that enables the Dairy Owner to keep track of their Goods. It is a Multivendor based management system. This means that supplier can also add their own product to the system. An inventory plays a vital role in taking care of small businesses and can also even help multiple users to handle their work efficiently. In this Project, The Admin Can manage the stocks of the product, and create, edit and delete the product as well. Since it is a multi-user system, users can log in even with their social account and Add their own product. The workflow of this system is efficient and easy to understand.
+
+## 🌐 Website Link
+
+[Surprise Dairy](https://warehouse-management-cli-2f12c.web.app/)
+
+
+## 🚀 Features
+
+- NodeJS & ExpressJS in Server-Side
+- ReactJS in FrontEnd
+- MongoDB For Database
+- Tailwind CSS for designing and making the system Responsive
+- API
+- CRUD(Create, Read, Update, Delete) Operation for Products
+- Authentication using Firebase and JWT to maximize the security
+- Reset Password
+- Menu Based on Login Status
+- Client-end Hosted on Firebase and Server Hosted on Heroku
+
+## 🚀 Functionalities
+- ### Inventory(Protected. Only the Logged in User can access)
+    - Managing Products from Creation - Deletion
+    - Product Stock Management. Can Restock each product
+    - Real-Time update on Database
+- ### Client Site
+    - Non logged in users only have the privilege to check the product
+    - User can Signup. After completing Signing Up, he/she will receive a confirmation mail. By confirming that, they will be able to log in
+    - User also can signup and Login using their Google Account.
+    - JWT token get stored so that user don't need to log in each time to access the protected route
+    - Multiple Form types included
+    - each of the users can upload and manage their own products. But, can access and check out all the available products.
+
+- ### Server Side
+    - Logger displays all sort of Error log
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 

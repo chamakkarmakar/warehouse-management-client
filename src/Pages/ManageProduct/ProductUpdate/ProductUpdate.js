@@ -16,7 +16,7 @@ const ProductUpdate = () => {
         // console.log(newQty);
         setProduct(newQty);
 
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://immense-reef-16580.herokuapp.com/product/${productId}`;
         fetch(url, {
             method : 'PUT',
             headers : {
@@ -37,7 +37,7 @@ const ProductUpdate = () => {
         const restockQty={quantity:newQty, ...rest};
         console.log(restockQty);
         setProduct(restockQty);
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://immense-reef-16580.herokuapp.com/product/${productId}`;
         fetch(url, {
             method : 'PUT',
             headers : {

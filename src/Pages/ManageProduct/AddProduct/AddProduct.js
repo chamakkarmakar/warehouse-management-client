@@ -21,7 +21,7 @@ const AddProduct = () => {
         }
         console.log(add);
 
-        const url=`http://localhost:5000/product`;
+        const url=`https://immense-reef-16580.herokuapp.com/product`;
         fetch(url,{
             method: 'POST',
             headers:{
