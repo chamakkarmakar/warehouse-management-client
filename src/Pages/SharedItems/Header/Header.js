@@ -7,7 +7,7 @@ import auth from '../../../firebase.init';
 
 const Header = () => {
     const [user] = useAuthState(auth);
-    const [selected,setSelected]=useState(false);
+    // const [selected, setSelected] = useState(false);
     const [open, setOpen] = useState(false);
 
     const navItems = [
@@ -40,13 +40,19 @@ const Header = () => {
                             </li>
                         )
                     }
-                    <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
-                        {
-                            user && 
-                            <>
-                            <Link to='/myitems' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>My Items</Link>
-
-                                {/* <button onClick={()=>setSelected(!selected)} className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">Dropdown
+                    {
+                        user &&
+                        <>
+                            <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
+                                <Link to='/myitems' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>My Items</Link>
+                            </li>
+                            <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
+                                <Link to='/allproducts' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>All Products</Link>
+                            </li>
+                            <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
+                                <Link to='/addproduct' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>Add Product</Link>
+                            </li>
+                            {/* <button onClick={()=>setSelected(!selected)} className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto">Dropdown
                                 { selected ? 
                                  <ChevronUpIcon className='w-6 h-6'></ChevronUpIcon> : 
                                  <ChevronDownIcon className='w-6 h-6'></ChevronDownIcon>
@@ -66,21 +72,20 @@ const Header = () => {
                                         </li>
                                     </ul>
                                 </div> */}
-                            </>
-                        }
-                    </li>
-                    <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
-                        {
-                            user ?
-                                <p className='text-white font-semibold cursor-pointer rounded-lg bg-green-400 hover:bg-green-700 p-2 transition duration-300 w-auto ease-in-out' onClick={handleSignOut}>SIGN OUT</p>
-                                :
-                                <Link to='/login' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>SIGN IN</Link>
-                        }
-                    </li>
-                </ul>
+                        </>
+                    }
+                <li className='md:ml-8 text-md space-x-1 md:my-0 my-7'>
+                    {
+                        user ?
+                            <p className='text-white font-semibold cursor-pointer rounded-lg bg-green-400 hover:bg-green-700 p-2 transition duration-300 w-auto ease-in-out' onClick={handleSignOut}>SIGN OUT</p>
+                            :
+                            <Link to='/login' className='text-gray-500 font-semibold hover:pb-5   hover:text-green-500 hover:border-b-4 border-green-500 transition duration-300 ease-in-out'>SIGN IN</Link>
+                    }
+                </li>
+            </ul>
 
-            </div>
         </div>
+        </div >
     );
 };
 
