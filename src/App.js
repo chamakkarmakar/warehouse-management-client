@@ -10,6 +10,7 @@ import Register from './Pages/LoginRegister/Register/Register';
 import RequireAuth from './Pages/LoginRegister/RequiredAuth/RequiredAuth';
 import AddProduct from './Pages/ManageProduct/AddProduct/AddProduct';
 import AllProducts from './Pages/ManageProduct/AllProducts/AllProducts';
+import MyItems from './Pages/ManageProduct/MyItems/MyItems';
 import ProductUpdate from './Pages/ManageProduct/ProductUpdate/ProductUpdate';
 import Footer from './Pages/SharedItems/Footer/Footer';
 import Header from './Pages/SharedItems/Header/Header';
@@ -24,19 +25,33 @@ function App() {
         <Route path='/home' element={<Home />} ></Route>
         <Route path='/products' element={<Products />} ></Route>
         <Route path='/aboutdairy' element={<AboutDairy />} ></Route>
+        <Route path='/about' element={<About />} ></Route>
+        <Route path='/blog' element={<Blog />} ></Route>
+
         <Route path='/allproducts' element={
           <RequireAuth>
             <AllProducts />
           </RequireAuth>
         } ></Route>
+
         <Route path='/product/:productId' element={
           <RequireAuth>
             <ProductUpdate />
           </RequireAuth>
         } ></Route>
-        <Route path='/about' element={<About />} ></Route>
-        <Route path='/blog' element={<Blog />} ></Route>
-        <Route path='/addproduct' element={<AddProduct />} ></Route>
+        
+        <Route path='/addproduct' element={
+          <RequireAuth>
+            <AddProduct />
+          </RequireAuth>
+        } ></Route>
+
+        <Route path='/myitems' element={
+          <RequireAuth>
+            <MyItems />
+          </RequireAuth>
+        } ></Route>
+
         <Route path='/login' element={<Login />} ></Route>
         <Route path='/register' element={<Register />} ></Route>
         <Route path='*' element={<NotFound />} ></Route>

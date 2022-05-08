@@ -76,7 +76,6 @@ const AboutDairy = () => {
             </div>
           </div>
         </div>
-        
     );
 };
 

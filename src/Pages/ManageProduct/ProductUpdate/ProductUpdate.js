@@ -1,5 +1,6 @@
+import { ArrowNarrowRightIcon } from '@heroicons/react/solid';
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useProductDetails from '../../../hooks/useProductDetails';
 
 const ProductUpdate = () => {
@@ -7,32 +8,42 @@ const ProductUpdate = () => {
     const [product,setProduct]=useProductDetails(productId);
     const { img, name, description, quantity, supplier, price } = product;
 
-    // const [reload,setReload]=useState(true);
-    // useEffect(()=>{
+    // const handleDelivered = () => {
+    //     const newQty = parseInt(product.quantity) - 1;
+    //     const quantity = newQty;
+    //     console.log(quantity);
     //     const url = `http://localhost:5000/product/${productId}`;
-    //     fetch(url)
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //         setReload(data)
+    //     fetch(url, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(quantity)
     //     })
-    // },[reload])
-    const handleDelivered = () => {
-        const newQty = parseInt(product.quantity) - 1;
-        const quantity = newQty;
-        console.log(quantity);
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             setProduct(data)
+    //         })
+    // }
+    const handleDelivered=()=>{
+        const {quantity, ...rest}=product;
+        const newQty=parseInt(product.quantity)-1;
+        const newProduct={quantity:newQty, ...rest};
         const url = `http://localhost:5000/product/${productId}`;
         fetch(url, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(quantity)
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newProduct)
+                })
+        .then(res=>res.json())
+        .then(data=>{
+            setProduct(data);
+            console.log(data);
+
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                setProduct(data)
-            })
     }
     return (
         <div className='container mx-auto text-lg'>
@@ -51,7 +62,7 @@ const ProductUpdate = () => {
                         {
                             quantity ? <p>Sold</p> : <p className='text-red-700'>Sold out</p>
                         }</div>
-                    <button onClick={() => handleDelivered(quantity)} className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full">Delivered</button>
+                    <button onClick={() => handleDelivered()} className="bg-rose-500 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full">Delivered</button>
                 </div>
             </div>
             <form className=' mx-auto w-96 h-48 shadow-lg px-8 md:mx-96 mt-10'>
@@ -61,7 +72,7 @@ const ProductUpdate = () => {
                     <input type="submit" value="Restock" className='bg-sky-500 rounded-xl py-2 px-14 font-semibold cursor-pointer hover:bg-sky-700 hover:text-white' />
                 </div>
             </form>
-            {/* <Link className='text-blue-500 float-right mr-16 text-2xl font-semibold' to='/allproducts' >Manage Inventories <ArrowNarrowRightIcon className='h-7 w-9 inline'></ArrowNarrowRightIcon> </Link> */}
+            <Link className='text-blue-500 float-right mr-16 text-2xl font-semibold' to='/allproducts' >Manage Inventories <ArrowNarrowRightIcon className='h-7 w-9 inline'></ArrowNarrowRightIcon> </Link>
         </div>
     );
 };

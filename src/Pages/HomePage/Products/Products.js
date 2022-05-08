@@ -9,7 +9,7 @@ const Products = () => {
     
     const sixProduct=products.slice(0,6);
     return (
-        <div className='my-8'>
+        <div className='my-8 '>
             <h1 className='text-3xl text-center font-extrabold my-7'>PRODUCTS</h1>
             <div className='container grid md:grid-cols-3 grid-cols-1 grid-flow-row gap-6 mx-auto'>
                 
