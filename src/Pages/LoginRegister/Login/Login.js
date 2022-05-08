@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -30,7 +31,7 @@ const Login = () => {
     }
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
     if (loading || sending) {
         return <Loading></Loading>
@@ -39,12 +40,16 @@ const Login = () => {
         errorElement = <p className='text-red-900 font-bold text-center'>invalid email/password</p>
     }
 
-    const handleLogin = e => {
+    const handleLogin = async e => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        console.log(data);
+        localStorage.setItem('token', data.token);
+        navigate(from, { replace: true });
     }
 
     const resetPassword = async () => {
@@ -69,8 +74,8 @@ const Login = () => {
                 <div className="mt-8">
                     <input className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" ref={passwordRef} type="password" placeholder="Enter your password" required />
                 </div>
-                <div  className="flex items-center mb-6 mt-1">
-                    <div  className="flex ml-auto">
+                <div className="flex items-center mb-6 mt-1">
+                    <div className="flex ml-auto">
                         <button onClick={resetPassword} className="no-underline inline-flex text-sm font-semibold sm:text-sm cursor-pointer text-indigo-600 hover:text-indigo-800">Forgot Password?</button>
                     </div>
                 </div>

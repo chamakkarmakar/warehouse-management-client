@@ -1,18 +1,33 @@
 import { PencilAltIcon, TrashIcon } from '@heroicons/react/solid';
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
     const [items, setItems] = useState([]);
+    const navigate=useNavigate();
 
     useEffect(() => {
         const getItems = async () => {
             const url = `http://localhost:5000/myitems?email=${user.email}`;
-            const {data}=await axios.get(url);
-            setItems(data);
+            try {
+                const {data}=await axios.get(url, {
+                    headers: {
+                        authorization : `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
+                setItems(data);
+            } catch (error) {
+                console.log(error.message);
+                if(error.response.status === 401 || error.response.status === 403){
+                    signOut(auth);
+                    navigate('/login')
+                }
+            }
         }
         getItems();
     }, [user])

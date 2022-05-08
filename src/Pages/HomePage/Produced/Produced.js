@@ -17,10 +17,10 @@ const Produced = () => {
     }
 
     return (
-        <div class="container mx-auto px-4 my-5">
-            <div class="mx-auto mb-16 max-w-lg text-center lg:mb-28">
-                <span class="text-lg font-bold text-rose-500">How A Dairy Product Made</span>
-                <h2 class="mt-6 mb-12 text-3xl font-bold">It Comes from Fresh and Organic Milk!</h2>
+        <div className="container mx-auto px-4 my-5">
+            <div className="mx-auto mb-16 max-w-lg text-center lg:mb-28">
+                <span className="text-lg font-bold text-rose-500">How A Dairy Product Made</span>
+                <h2 className="mt-6 mb-12 text-3xl font-bold">It Comes from Fresh and Organic Milk!</h2>
             </div>
             <div className="flex md:flex-row flex-col items-center justify-between">
                 <div className='md:w-1/2 w-full md:mx-7'>
@@ -29,7 +29,7 @@ const Produced = () => {
                 <div className='md:w-1/2 w-full md:mx-7'>
                     {
                         processes.map((process, i) =>
-                            <div id="accordion-collapse" data-accordion="collapse">
+                            <div id="accordion-collapse" data-accordion="collapse" key={i}>
                                 <h2 id="accordion-collapse-heading-1">
                                     <button type="button" onClick={() => handleClick(i)} className="flex justify-between items-center p-5 w-full font-medium text-left rounded-t-xl border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200  text-gray-900" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
                                         <span>{process.heading} </span>
