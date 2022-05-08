@@ -14,6 +14,7 @@ import MyItems from './Pages/ManageProduct/MyItems/MyItems';
 import ProductUpdate from './Pages/ManageProduct/ProductUpdate/ProductUpdate';
 import Footer from './Pages/SharedItems/Footer/Footer';
 import Header from './Pages/SharedItems/Header/Header';
+import Loading from './Pages/SharedItems/Loading/Loading';
 import NotFound from './Pages/SharedItems/NotFound/NotFound';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} ></Route>
         <Route path='/home' element={<Home />} ></Route>
+        <Route path='/loading' element={<Loading />} ></Route>
         <Route path='/products' element={<Products />} ></Route>
         <Route path='/aboutdairy' element={<AboutDairy />} ></Route>
         <Route path='/about' element={<About />} ></Route>
