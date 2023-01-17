@@ -1,5 +1,8 @@
 import React from 'react';
-
+import { CgGlassAlt } from "react-icons/cg";
+import { FaAward } from "react-icons/fa";
+import { GiMilkCarton } from "react-icons/gi";
+import { TbMilk } from "react-icons/tb";
 const AboutDairy = () => {
     return (
         <div className="bg-white py-12">
@@ -14,7 +17,7 @@ const AboutDairy = () => {
                 <div className="relative">
                   <dt>
                     <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-rose-400 text-white">
-                      
+                    <GiMilkCarton className='text-white w-8 h-8'></GiMilkCarton>
                     </div>
                     <p className="ml-16 py-2 text-lg font-medium leading-6 text-gray-900">Modern Dairy.</p>
                   </dt>
@@ -23,8 +26,7 @@ const AboutDairy = () => {
                 <div className="relative">
                   <dt>
                     <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-rose-400 text-white">
-                       
-                     
+                    <CgGlassAlt className='text-white w-8 h-8'></CgGlassAlt>   
                     </div>
                     <p className="ml-16 py-2 text-lg font-medium leading-6 text-gray-900">100% Natural & Organic</p>
                   </dt>
@@ -33,7 +35,7 @@ const AboutDairy = () => {
                 <div className="relative">
                   <dt>
                     <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-rose-400 text-white">
-                      
+                    <TbMilk className="text-white w-8 h-8"></TbMilk>
                     </div>
                     <p className="ml-16 py-2 text-lg font-medium leading-6 text-gray-900">Best products</p>
                   </dt>
@@ -42,7 +44,7 @@ const AboutDairy = () => {
                 <div className="relative">
                   <dt>
                     <div className="absolute flex h-12 w-12 items-center justify-center rounded-md bg-rose-400 text-white">
-                     
+                    <FaAward className="text-white w-8 h-8"></FaAward>
                     </div>
                     <p className="ml-16 py-2 text-lg font-medium leading-6 text-gray-900">Awarded Dairy Supplier</p>
                   </dt>

@@ -30,7 +30,7 @@ const MyItems = () => {
             }
         }
         getItems();
-    }, [user])
+    }, [user,navigate])
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?');
