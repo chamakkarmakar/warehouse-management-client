@@ -46,7 +46,7 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('https://immense-reef-16580.herokuapp.com/login', { email });
+        const { data } = await axios.post('https://nameless-wave-09337.herokuapp.com/login', { email });
         console.log(data);
         localStorage.setItem('token', data.token);
         navigate(from, { replace: true });

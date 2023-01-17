@@ -11,7 +11,7 @@ const AllProducts = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete?');
         if (proceed) {
-            const url = `https://immense-reef-16580.herokuapp.com/product/${id}`;
+            const url = `https://nameless-wave-09337.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

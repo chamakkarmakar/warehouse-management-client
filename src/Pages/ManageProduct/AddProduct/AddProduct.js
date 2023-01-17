@@ -21,7 +21,7 @@ const AddProduct = () => {
         }
         console.log(add);
 
-        const url=`https://immense-reef-16580.herokuapp.com/product`;
+        const url=`https://nameless-wave-09337.herokuapp.com/product`;
         fetch(url,{
             method: 'POST',
             headers:{
